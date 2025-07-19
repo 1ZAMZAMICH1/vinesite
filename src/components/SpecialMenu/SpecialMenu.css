@@ -1,0 +1,139 @@
+.app__specialMenu {
+    background: var(--bg-dark);
+    flex-direction: column;
+}
+
+.app__specialMenu-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app__specialMenu-title .spoon__img {
+    margin: 0 auto 1rem;
+}
+
+.app__specialMenu-menu {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.app__specialMenu-menu_heading {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 58.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-light);
+}
+
+.app__specialMenu-menu_wine,
+.app__specialMenu-menu_cocktails {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__specialMenu-menu_img {
+    width: 410px;
+    margin: 0 2rem;
+}
+
+.app__specialMenu-menu_img img {
+    width: 100%;
+    height: auto;
+}
+
+.app__specialMenu_menu_items {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.app__menuitem {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.app__menuitem-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app__menuitem-name {
+    flex: 1;
+}
+
+.app__menuitem-name p {
+    color: var(--accent-gold);
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 29px;
+    letter-spacing: 0.04em;
+}
+
+.app__menuitem-dash {
+    width: 90px;
+    height: 1px;
+    background: var(--accent-gold);
+    margin: 0 1rem;
+}
+
+.app__menuitem-price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.app__menuitem-price p {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 29px;
+    letter-spacing: 0.04em;
+    color: var(--text-light);
+}
+
+.app__menuitem-sub {
+    width: 100%;
+    margin-top: 0.2rem;
+}
+
+.app__menuitem-sub p {
+    font-family: var(--font-base);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    color: #AAAAAA;
+}
+
+@media screen and (max-width: 1150px) {
+    .app__specialMenu-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .app__specialMenu-menu_img {
+        margin: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__specialMenu-menu_img {
+        width: 100%;
+    }
+
+    .app__specialMenu-menu_heading {
+        font-size: 35px;
+        line-height: 48.5px;
+    }
+}

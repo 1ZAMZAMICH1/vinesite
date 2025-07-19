@@ -1,0 +1,103 @@
+.app__header {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+  }
+  
+  .menu__button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu__button:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    transform: scale(1.1);
+  }
+  
+  .header__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+  }
+  
+  .header__overlay.open {
+    transform: translateY(0);
+  }
+  
+  .overlay__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 40px;
+    color: var(--accent-gold);
+    cursor: pointer;
+  }
+  
+  .overlay__links {
+    list-style: none;
+    text-align: center;
+  }
+  
+  .overlay__links li {
+    margin: 2rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .header__overlay.open .overlay__links li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Задержка для красивого появления */
+  .header__overlay.open .overlay__links li:nth-child(1) { transition-delay: 0.3s; }
+  .header__overlay.open .overlay__links li:nth-child(2) { transition-delay: 0.4s; }
+  .header__overlay.open .overlay__links li:nth-child(3) { transition-delay: 0.5s; }
+  .header__overlay.open .overlay__links li:nth-child(4) { transition-delay: 0.6s; }
+  
+  
+  .overlay__links li a {
+    font-family: var(--font-accent);
+    font-size: 3rem;
+    color: var(--text-light);
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .overlay__links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-gold);
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .overlay__links li a:hover::after {
+    width: 100%;
+  }
