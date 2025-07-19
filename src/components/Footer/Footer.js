@@ -15,7 +15,7 @@ const Footer = () => (
       <div className="app__footer-links_logo">
         <h1 className="app__footer-headtext" style={{ fontFamily: 'var(--font-accent)', fontSize: '48px', color: 'var(--accent-gold)'}}>Vinum</h1>
         <p className="p-text">"Лучший способ быть счастливым — это делиться счастьем с другими."</p>
-        <img src={spoon} className="spoon__img" style={{ marginTop: 15 }} />
+        <img src={spoon} className="spoon__img" style={{ marginTop: 15 }} alt="spoon" />
         <div className="app__footer-links_icons">
           <FiFacebook />
           <FiTwitter />
