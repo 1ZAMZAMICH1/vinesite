@@ -1,4 +1,4 @@
-import React, 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './EventsPage.css';
 import spoon from '../../assets/spoon.svg';
@@ -21,9 +21,10 @@ const EventCard = ({ event }) => (
 );
 
 const EventsPage = () => {
-    const [eventsData, setEventsData] = React.useState([]);
+    const [eventsData, setEventsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!GIST_ID) return;
         fetch(`https://api.github.com/gists/${GIST_ID}?t=${new Date().getTime()}`)
             .then(res => res.json())
@@ -32,10 +33,14 @@ const EventsPage = () => {
                     const content = JSON.parse(data.files['vinopark-db.json'].content);
                     setEventsData(content.events || []);
                 }
-            });
+                setIsLoading(false);
+            })
+            .catch(() => setIsLoading(false));
     }, []);
 
-    if (!eventsData.length) return <div style={{color: 'white', paddingTop: '10rem'}}>Загрузка...</div>;
+    if (isLoading) {
+        return <div style={{color: 'white', textAlign: 'center', paddingTop: '10rem'}}>Загрузка событий...</div>;
+    }
 
     return (
         <>
