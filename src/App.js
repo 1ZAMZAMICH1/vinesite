@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, 'useState', useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ReactLenis } from '@studio-freight/react-lenis';
 
 import './App.css';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection'; // <-- ИСПРАВЛЕНО ЗДЕСЬ
+import HeroSection from './components/HeroSection/HeroSection'; // <-- ПРАВИЛЬНЫЙ, СУКА, ПУТЬ
 import ChoiceSection from './components/ChoiceSection/ChoiceSection';
 import Booking from './components/Booking/Booking';
 import Events from './components/Events/Events';
@@ -52,6 +53,7 @@ function App() {
   const handleEnter = () => { setIsIntroDone(true); };
 
   return (
+    <ReactLenis root>
       <div className="App">
         <WelcomeScreen onEnter={handleEnter} isHidden={isIntroDone} />
         
@@ -66,6 +68,7 @@ function App() {
           </Routes>
         </div>
       </div>
+    </ReactLenis>
   );
 }
 
