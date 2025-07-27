@@ -7,7 +7,7 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import './App.css';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
+import HeroSection from './components/HeroSection'; // <-- ИСПРАВЛЕНО ЗДЕСЬ, БЛЯТЬ
 import ChoiceSection from './components/ChoiceSection/ChoiceSection';
 import Contact from './components/Contact/Contact';
 import Booking from './components/Booking/Booking';
