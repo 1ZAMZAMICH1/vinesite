@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { ReactLenis } from '@studio-freight/react-lenis';
 
 import './App.css';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection'; // <-- ИСПРАВЛЕНО ЗДЕСЬ, БЛЯТЬ
+import HeroSection from './components/HeroSection/HeroSection';
 import ChoiceSection from './components/ChoiceSection/ChoiceSection';
 import Contact from './components/Contact/Contact';
 import Booking from './components/Booking/Booking';
@@ -53,22 +52,20 @@ function App() {
   const handleEnter = () => { setIsIntroDone(true); };
 
   return (
-    <ReactLenis root>
-      <div className="App">
-        <WelcomeScreen onEnter={handleEnter} isHidden={isIntroDone} />
-        
-        <div className={`main-content-wrapper ${isIntroDone ? 'visible' : ''}`}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/vinoteka" element={<Vinoteka />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/events/:eventId" element={<EventDetailPage />} />
-            <Route path="/admin" element={<AdminPanel />} />
-          </Routes>
-        </div>
+    <div className="App">
+      <WelcomeScreen onEnter={handleEnter} isHidden={isIntroDone} />
+      
+      <div className={`main-content-wrapper ${isIntroDone ? 'visible' : ''}`}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/vinoteka" element={<Vinoteka />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/events/:eventId" element={<EventDetailPage />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
       </div>
-    </ReactLenis>
+    </div>
   );
 }
 
