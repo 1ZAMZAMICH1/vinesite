@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import './App.css';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroScreen/HeroSection';
+import HeroSection from './components/HeroSection/HeroSection'; // <-- ИСПРАВЛЕНО ЗДЕСЬ
 import ChoiceSection from './components/ChoiceSection/ChoiceSection';
 import Booking from './components/Booking/Booking';
 import Events from './components/Events/Events';
