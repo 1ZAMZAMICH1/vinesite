@@ -1,0 +1,100 @@
+.app__choice {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--bg-dark);
+}
+
+.choice-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    text-decoration: none;
+}
+
+/* СЛОЙ 1: Темный, монохромный фон (виден по умолчанию) */
+.choice-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3) grayscale(1);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* СЛОЙ 2: Яркий, цветной фон (скрыт, появляется при наведении) */
+.choice-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); /* <-- СКРЫВАЕМ СЛЕВА */
+}
+
+.choice-panel.menu::before, .choice-panel.menu::after {
+    background-image: url(../../assets/teaser-menu.jpg);
+}
+.choice-panel.vinoteka::before, .choice-panel.vinoteka::after {
+    background-image: url(../../assets/teaser-vinoteka.jpg);
+}
+
+.choice-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.choice-content h2 {
+    font-family: var(--font-accent);
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+/* ГЛАВНАЯ ФИШКА - АНИМАЦИЯ */
+
+/* Реакция неактивного блока */
+.app__choice:hover .choice-panel:not(:hover) {
+    transform: scale(0.95);
+    filter: blur(3px);
+}
+
+/* Анимация "раскрытия" при наведении */
+.choice-panel:hover::after {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* <-- РАСКРЫВАЕМ СЛЕВА НАПРАВО */
+}
+
+/* Анимация контента при наведении */
+.choice-panel:hover .choice-content {
+    transform: scale(1.1) translateY(-10px); /* Эффект параллакса */
+}
+
+@media screen and (max-width: 900px) {
+    .app__choice {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .app__choice:hover .choice-panel:not(:hover) {
+        transform: none;
+        filter: none;
+    }
+    .choice-content h2 {
+        font-size: 4rem;
+    }
+}

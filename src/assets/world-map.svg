@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <style>
+    .land { fill: none; stroke: #c9a25b; stroke-width: 0.5; opacity: 0.3; }
+    .wine-region { fill: #c9a25b; opacity: 0; transition: all 0.5s ease; cursor: pointer; }
+    .wine-region:hover { opacity: 0.8; filter: drop-shadow(0 0 15px #c9a25b); }
+    .region-text { font-family: 'Cormorant Garamond', serif; fill: #f3efe9; font-size: 10px; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+    .wine-region:hover + .region-text { opacity: 1; }
+  </style>
+  <path class="land" d="M 10 250 L 150 150 L 200 200 L 250 100 L 300 300 L 200 450 L 10 250 Z" />
+  <path class="land" d="M 350 100 L 450 50 L 600 150 L 550 300 L 400 350 L 350 100 Z" />
+  <path class="land" d="M 650 100 L 950 150 L 900 350 L 700 400 L 650 100 Z" />
+  
+  <circle class="wine-region" cx="450" cy="180" r="10" />
+  <text class="region-text" x="465" y="185">Bordeaux</text>
+  
+  <circle class="wine-region" cx="480" cy="220" r="10" />
+  <text class="region-text" x="495" y="225">Tuscany</text>
+
+  <circle class="wine-region" cx="440" cy="240" r="10" />
+  <text class="region-text" x="455" y="245">Rioja</text>
+
+  <circle class="wine-region" cx="180" cy="250" r="10" />
+  <text class="region-text" x="195" y="255">Napa Valley</text>
+
+  <circle class="wine-region" cx="220" cy="380" r="10" />
+  <text class="region-text" x="235" y="385">Mendoza</text>
+
+  <circle class="wine-region" cx="800" cy="320" r="10" />
+  <text class="region-text" x="815" y="325">Barossa</text>
+</svg>

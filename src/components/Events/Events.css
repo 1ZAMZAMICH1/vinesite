@@ -1,0 +1,70 @@
+.app__events {
+    background: var(--bg-dark);
+}
+
+.app__events-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.app__events-container {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
+.event__card {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    break-inside: avoid-column;
+    border: 1px solid rgba(201, 162, 91, 0.2);
+    transition: all 0.4s ease;
+}
+
+.event__card:hover {
+    box-shadow: 0 0 30px rgba(201, 162, 91, 0.2);
+}
+
+.event__card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.event__card-content {
+    padding: 1.5rem;
+}
+
+.event__card-content .date {
+    font-family: var(--font-base);
+    color: var(--accent-gold);
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.event__card-content .title {
+    font-family: var(--font-accent);
+    color: var(--text-light);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.event__card-content .description {
+    font-family: var(--font-base);
+    color: #AAAAAA;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .app__events-container {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app__events-container {
+        column-count: 1;
+    }
+}

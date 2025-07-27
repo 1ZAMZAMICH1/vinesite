@@ -1,0 +1,86 @@
+.app__contact {
+    min-height: 100vh;
+    width: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.app__contact-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px; /* <-- СДЕЛАЛИ БОЛЬШЕ */
+    height: 80vh; /* <-- СДЕЛАЛИ БОЛЬШЕ */
+    max-height: 800px;
+}
+
+.app__contact-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 90%; /* <-- КАРТА НЕ ДОХОДИТ ДО НИЗА */
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.app__contact-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.app__contact-info {
+    position: absolute;
+    bottom: 0; /* <-- ИНФО-БЛОК НАЧИНАЕТСЯ С НИЗУ */
+    right: 0;
+    width: 55%;
+    background: rgba(17, 17, 17, 0.7);
+    border: 1px solid rgba(201, 162, 91, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.app__contact-info h1 {
+    font-family: var(--font-accent);
+    font-size: 64px;
+    color: var(--accent-gold);
+    line-height: 1.2;
+}
+
+.app__contact-info h3 {
+    font-family: var(--font-accent);
+    color: var(--accent-gold);
+    font-size: 22px;
+    margin-top: 2rem;
+}
+
+.app__contact-info p {
+    font-family: var(--font-base);
+    color: #AAAAAA;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .app__contact-container {
+        height: auto;
+        display: block;
+    }
+    .app__contact-map, .app__contact-info {
+        position: relative;
+        width: 100%;
+        transform: none;
+    }
+    .app__contact-map {
+        height: 50vh;
+    }
+    .app__contact-info {
+        margin-top: -15%;
+    }
+}

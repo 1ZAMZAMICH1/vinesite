@@ -1,0 +1,32 @@
+.event-detail {
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+}
+.event-detail-header {
+    text-align: center;
+    padding-top: 5rem; /* Добавляем отступ сверху */
+}
+.event-detail-carousel {
+    max-width: 1200px; /* Ограничиваем ширину карусели */
+    margin: 3rem auto; /* Центрируем и добавляем отступы */
+}
+.event-detail-carousel .slick-slide > div {
+    display: flex;
+    justify-content: center;
+}
+.event-detail-carousel .slick-slide img {
+    height: 70vh; /* Задаем высоту */
+    width: auto; /* Ширина подстроится */
+    max-width: 100%;
+    object-fit: contain; /* ГЛАВНЫЙ ФИКС: ВМЕСТО cover */
+}
+.event-detail-content {
+    max-width: 800px;
+    margin: 3rem auto;
+    text-align: center;
+}
+.event-detail-content p {
+    color: #AAAAAA;
+    font-size: 18px;
+    line-height: 1.8;
+}

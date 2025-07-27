@@ -1,0 +1,70 @@
+.app__welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 1s ease; /* <-- ПРАВИЛЬНЫЙ ПЕРЕХОД */
+}
+
+.app__welcome.hidden {
+    opacity: 0;
+    visibility: hidden; /* <-- ПРАВИЛЬНОЕ СКРЫТИЕ */
+    pointer-events: none;
+}
+
+.app__welcome-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.15; /* <-- СДЕЛАЛ ЕЛЕ ЗАМЕТНЫМ */
+}
+
+.app__welcome::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-gold), var(--accent-wine));
+    mix-blend-mode: overlay;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.app__welcome-content {
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+    z-index: 3;
+}
+
+.welcome-logo {
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.app__welcome-content p {
+    font-family: var(--font-base);
+    letter-spacing: 2px;
+    margin: 1rem 0 2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    .welcome-logo {
+        max-width: 80%;
+    }
+}

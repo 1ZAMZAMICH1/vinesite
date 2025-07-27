@@ -9,17 +9,20 @@
   overflow: hidden;
 }
 
+/* ВОТ ЭТОТ БЛОК МЫ МЕНЯЕМ */
 .app__hero::before {
-  content: 'V';
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--font-accent);
-  font-size: 50rem;
-  font-weight: 700;
-  color: var(--accent-gold);
-  opacity: 0.05;
+  width: 80vw;
+  height: 80vh;
+  background-image: var(--hero-bg-logo); /* <-- Используем переменную */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
   z-index: 1;
 }
 
@@ -66,7 +69,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   text-align: center;
-  padding: 20px 40px; 
+  padding: 20px 40px;
   transition: opacity 0.6s ease;
 }
 
@@ -76,19 +79,65 @@
 
 .country-overlay {
   position: absolute;
-  bottom: 20px; /* <-- Позиция внизу */
-  right: -20px; /* <-- Позиция справа */
-  transform: rotate(-15deg); /* <-- Естественный наклон */
-  font-family: var(--font-signature); /* <-- ШРИФТ ПОДПИСИ */
+  bottom: 15px;
+  right: -20px;
+  transform: rotate(-15deg);
+  font-family: var(--font-signature);
   font-weight: 700;
-  font-size: 35px;
+  font-size: 44px;
   pointer-events: none;
   white-space: nowrap;
-  
-  /* Текстура через градиент */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  
   filter: drop-shadow(0 0 2px #000) drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+.details-button {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 10;
+  background-color: var(--accent-gold);
+  color: var(--bg-dark);
+  font-family: var(--font-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.details-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.details-button:hover {
+  background-color: var(--text-light);
+}
+
+.wine-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.wine-modal {
+    background-color: var(--bg-dark); border: 1px solid var(--accent-gold); width: 90%; max-width: 800px;
+    display: flex; gap: 2rem; padding: 2rem; position: relative;
+}
+.wine-modal-close {
+    position: absolute; top: 1rem; right: 1rem; font-size: 30px; color: var(--accent-gold); cursor: pointer;
+}
+.wine-modal-image { flex: 1; }
+.wine-modal-image img { width: 100%; max-height: 60vh; object-fit: contain; }
+.wine-modal-content { flex: 2; color: var(--text-light); }
+.wine-modal-content h2 { font-family: var(--font-accent); font-size: 42px; color: var(--accent-gold); margin-bottom: 0.5rem; }
+.wine-modal-content .tags { font-family: var(--font-base); color: #AAAAAA; margin-bottom: 2rem; }
+.wine-modal-content p { font-family: var(--font-base); line-height: 1.7; margin-bottom: 1rem; }
+@media screen and (max-width: 768px) {
+    .wine-modal { flex-direction: column; max-height: 90vh; overflow-y: auto; }
 }

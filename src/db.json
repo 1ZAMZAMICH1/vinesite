@@ -1,0 +1,31 @@
+{
+    "vinoteka": [
+      { "id": 1, "name": "L'Étoile Solitaire", "country": "Франция", "type": "Белое", "price": 7200 },
+      { "id": 2, "name": "Cuore di Pietra", "country": "Италия", "type": "Красное", "price": 9500 },
+      { "id": 3, "name": "Furia Roja", "country": "Испания", "type": "Красное", "price": 6800 },
+      { "id": 4, "name": "Crimson Peak", "country": "США", "type": "Красное", "price": 11200 },
+      { "id": 5, "name": "Sunburnt Earth", "country": "Австралия", "type": "Красное", "price": 8900 },
+      { "id": 6, "name": "Andean Shadow", "country": "Аргентина", "type": "Красное", "price": 7500 },
+      { "id": 7, "name": "Volcanic Kiss", "country": "Чили", "type": "Розовое", "price": 5300 }
+    ],
+    "menu": {
+      "osnovnoe": {
+        "Устрицы": [{ "title": "Хасанская", "price": "350", "description": "Цена за 1 шт. Подается с лимоном и винным уксусом" }],
+        "Салаты": [{ "title": "Цезарь с курицей", "price": "650", "description": "Романо, куриное филе на гриле, гренки, соус \"Цезарь\"" }]
+      },
+      "barnoe": {
+        "Виски": [{ "title": "Jameson", "price": "500", "description": "Ирландский виски, 50 мл" }]
+      },
+      "banketnoe": {
+        "Основные блюда": [{ "title": "Молочный поросенок", "price": "15000", "description": "Запеченный целиком. По предзаказу" }]
+      },
+      "sigary": {
+        "Сигары": [{ "title": "Cohiba Siglo VI", "price": "4500", "description": "Куба, цена за 1 шт." }]
+      }
+    },
+    "events": [
+      { "date": "25 ДЕКАБРЯ, 2024", "title": "Вечер Тосканских Вин", "description": "Откройте для себя сокровища Тосканы с нашим сомелье." },
+      { "date": "15 ЯНВАРЯ, 2025", "title": "Мастер-класс: Идеальная Пара", "description": "Учимся подбирать вино к сырам и мясу." },
+      { "date": "02 ФЕВРАЛЯ, 2025", "title": "Джаз и Каберне", "description": "Живое выступление джаз-бэнда." }
+    ]
+  }

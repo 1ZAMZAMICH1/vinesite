@@ -1,0 +1,133 @@
+.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-dark);
+}
+.login-form {
+    background: #111;
+    padding: 2rem;
+    border: 1px solid var(--accent-gold);
+    width: 90%;
+    max-width: 400px;
+}
+.login-form h1 {
+    font-family: var(--font-accent);
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin-layout {
+    min-height: 100vh;
+}
+.admin-sider {
+    background: #111 !important;
+    border-right: 1px solid rgba(201, 162, 91, 0.2);
+}
+.admin-logo {
+    color: var(--accent-gold);
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--font-accent);
+    font-size: 24px;
+    border-bottom: 1px solid rgba(201, 162, 91, 0.1);
+}
+.admin-content {
+    padding: 24px;
+    min-height: 360px;
+    background: var(--bg-dark);
+}
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.admin-header h2 {
+    color: var(--text-light);
+    font-family: var(--font-accent);
+    font-size: 32px;
+}
+
+/* Перекрашиваем Ant Design в наш стиль */
+.ant-layout, .ant-menu, .ant-table, .ant-modal-content, .ant-form, .ant-input, .ant-select-selector,
+.ant-collapse, .ant-collapse-item, .ant-collapse-content, .ant-collapse-content-box {
+    background: transparent !important;
+    color: #AAAAAA !important;
+}
+.ant-menu-dark, .ant-table-thead > tr > th {
+    background: #111 !important;
+}
+.ant-table-tbody > tr > td {
+    border-color: rgba(201, 162, 91, 0.2) !important;
+}
+.ant-menu-title-content, .ant-table-thead > tr > th {
+    color: var(--text-light) !important;
+}
+.ant-menu-item-selected {
+    background-color: var(--accent-gold) !important;
+}
+.ant-btn-primary {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+.ant-collapse-header-text {
+    color: var(--accent-gold) !important;
+    font-family: var(--font-accent) !important;
+}
+.ant-form-item-label > label {
+    color: var(--accent-gold) !important;
+}
+.ant-input, .ant-input-password, .ant-form-item-control-input-content > .ant-input {
+    background: var(--bg-dark) !important;
+    border-color: rgba(201, 162, 91, 0.5) !important;
+    color: var(--text-light) !important;
+}
+.ant-input::placeholder {
+    color: #555 !important;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+.dashboard-card {
+    background: var(--bg-dark);
+    border: 1px solid rgba(201, 162, 91, 0.2);
+    padding: 24px;
+    text-align: center;
+}
+.dashboard-card .ant-statistic-title {
+    color: #AAAAAA !important;
+}
+.dashboard-card .ant-statistic-content {
+    color: var(--accent-gold) !important;
+    font-family: var(--font-accent);
+}
+.ant-tag-green {
+    background: #1b4d3e !important;
+    border-color: #276351 !important;
+    color: #6ee7b7 !important;
+}
+.ant-tag-blue {
+    background: #1e40af !important;
+    border-color: #2563eb !important;
+    color: #93c5fd !important;
+}
+
+.item-card {
+    background: var(--bg-dark);
+    border: 1px solid rgba(201, 162, 91, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-card p {
+    margin: 0;
+    color: var(--text-light);
+}

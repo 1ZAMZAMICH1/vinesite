@@ -1,0 +1,120 @@
+.app__vinoteka {
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+}
+.app__vinoteka-header {
+    text-align: center;
+    padding: 5rem 0 3rem 0;
+}
+.app__vinoteka-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem 3rem 2rem;
+    flex-wrap: wrap;
+}
+.app__vinoteka-filters select, .app__vinoteka-filters input {
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    padding: 0.5rem 1rem;
+    color: var(--text-light);
+    font-family: var(--font-base);
+}
+.app__vinoteka-filters select option { background-color: var(--bg-dark); }
+.app__vinoteka-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.wine-card {
+    border: 1px solid rgba(201, 162, 91, 0.2);
+    text-align: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.wine-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.wine-card img { height: 300px; object-fit: contain; margin-bottom: 1rem; }
+.wine-card h3 { font-family: var(--font-accent); color: var(--accent-gold); font-size: 24px; }
+.wine-card p { color: #AAA; }
+
+/* ФИНАЛЬНЫЙ, ЖЕЛЕЗОБЕТОННЫЙ ФИКС МОДАЛКИ */
+.ant-modal-content {
+    background: var(--bg-dark) !important;
+    border: 2px solid var(--accent-gold) !important;
+    padding: 2rem !important;
+}
+.wine-modal-layout {
+    display: flex;
+    gap: 2rem;
+}
+.wine-modal-image {
+    flex: 2;
+}
+.wine-modal-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wine-modal-content h2 {
+    font-family: var(--font-accent);
+    color: var(--accent-gold);
+    font-size: 42px;
+    line-height: 1.2;
+}
+.wine-modal-content .tags {
+    color: #AAA;
+    margin: 1rem 0 2rem 0;
+}
+.ant-carousel .slick-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ant-carousel .slick-slide img {
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+.ant-modal-close {
+    color: var(--accent-gold) !important;
+    top: 15px !important;
+    right: 15px !important;
+}
+.ant-modal-close:hover {
+    color: #FFF !important;
+}
+
+/* --- ДОБАВЛЕНИЯ: полностью залить фон модалки --- */
+
+/* Затемнение/оверлей вокруг окна */
+.ant-modal-root .ant-modal-mask {
+    background: var(--bg-dark) !important;
+    opacity: 1 !important; /* делаем непрозрачным, если этого требует дизайн */
+}
+
+/* Внешняя обёртка модалки */
+.ant-modal {
+    background: var(--bg-dark) !important;
+    box-shadow: none !important;
+    /* border: 2px solid var(--accent-gold); */  /* Если нужна внешняя рамка */
+}
+
+/* Содержимое */
+.ant-modal-header {
+    background: var(--bg-dark) !important;
+    border-bottom: none !important;
+}
+
+.ant-modal-title {
+    color: var(--accent-gold) !important;
+}
+
+.ant-modal-footer {
+    background: var(--bg-dark) !important;
+    border-top: none !important;
+}

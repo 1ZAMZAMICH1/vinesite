@@ -1,0 +1,125 @@
+.app__booking {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-dark);
+}
+
+.app__booking-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    z-index: 2;
+}
+
+.app__booking-plan_wrapper {
+    width: 90%;
+    max-width: 1400px;
+    z-index: 2;
+}
+
+.app__booking-plan svg {
+    width: 100%;
+    height: auto;
+}
+
+.app__booking-plan .table {
+    fill: #f3efe9;
+    opacity: 0.15;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.app__booking-plan .table:hover {
+    opacity: 0.5;
+}
+
+/* МОДАЛЬНЫЕ ОКНА */
+.booking-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.booking-modal {
+    background-color: var(--bg-dark);
+    padding: 2.5rem;
+    border: 1px solid var(--accent-gold);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.booking-modal h2 {
+    font-family: var(--font-accent);
+    color: var(--accent-gold);
+    font-size: 32px;
+    margin-bottom: 1rem;
+}
+
+.booking-modal p {
+    color: #AAAAAA;
+    margin-bottom: 2rem;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.time-slot {
+    background-color: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-slot:hover:not(:disabled) {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+}
+
+.time-slot:disabled {
+    border-color: rgba(201, 162, 91, 0.2);
+    color: rgba(201, 162, 91, 0.2);
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    font-family: var(--font-base);
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+.form-group input {
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    padding: 0.75rem 1rem;
+    color: var(--text-light);
+    font-family: var(--font-base);
+    font-size: 16px;
+    outline: none;
+}
