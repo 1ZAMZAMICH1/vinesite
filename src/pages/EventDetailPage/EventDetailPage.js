@@ -20,6 +20,7 @@ const EventDetailPage = () => {
             .then(data => {
                 if (data.files && data.files['vinopark-db.json']) {
                     const content = JSON.parse(data.files['vinopark-db.json'].content);
+                    // ИСПРАВЛЕНО ЗДЕСЬ, БЛЯТЬ. ИЩЕМ ПО ID.
                     const currentEvent = content.events.find(e => e.id.toString() === eventId);
                     setEvent(currentEvent);
                 }
@@ -37,7 +38,7 @@ const EventDetailPage = () => {
             <div className="event-detail section__padding">
                 <div className="event-detail-header" data-aos="fade-down">
                     <h1 className="heading-text">{event.title}</h1>
-                    <img src={spoon} alt="spoon_image" className="spoon__img" style={{margin: '1rem auto'}}/>
+                    <img src={spoon} alt="spoon" className="spoon__img" style={{margin: '1rem auto'}}/>
                     <p style={{color: 'var(--accent-gold)'}}>{event.date}</p>
                 </div>
                 
@@ -46,7 +47,7 @@ const EventDetailPage = () => {
                         <Carousel autoplay>
                             {event.image.map((img, i) => (
                                 <div key={i}>
-                                    <img src={img} alt={`${event.title} gallery image ${i + 1}`} />
+                                    <img src={img} alt={`${event.title} ${i + 1}`} />
                                 </div>
                             ))}
                         </Carousel>
