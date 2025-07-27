@@ -15,7 +15,8 @@ const Footer = () => (
       <div className="app__footer-links_logo" data-aos="fade-up">
         <h1 className="logo-text">Vinopark</h1>
         <p className="p-text" style={{color: '#AAA'}}>"Лучший способ быть счастливым — это делиться счастьем с другими."</p>
-        <img src={spoon} className="spoon__img" style={{ marginTop: 15 }} />
+        {/* ВОТ ЗДЕСЬ, БЛЯТЬ, БЫЛ КОСЯК */}
+        <img src={spoon} alt="spoon" className="spoon__img" style={{ marginTop: 15 }} />
         <div className="app__footer-links_icons">
           <FiFacebook />
           <FiTwitter />
@@ -33,7 +34,7 @@ const Footer = () => (
     </div>
 
     <div className="footer__copyright">
-      <p className="p-text">2024 Vinopark. Все права защищены.</p>
+      <p className="p-text" style={{color: '#AAA'}}>2024 Vinopark. Все права защищены.</p>
     </div>
   </section>
 );
